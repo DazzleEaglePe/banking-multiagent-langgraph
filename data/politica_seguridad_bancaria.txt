@@ -1,0 +1,28 @@
+POLÍTICAS DE SEGURIDAD DE LA INFORMACIÓN Y SECRETO BANCARIO - CAJA ICA
+Código de Documento: CMAC-ICA-POL-SEG-011
+Fecha de Aprobación: Noviembre 2025
+
+1. PRINCIPIO DE CONFIDENCIALIDAD Y SECRETO BANCARIO
+De acuerdo con el artículo 140 de la Ley General del Sistema Financiero (Ley N° 26702), está terminantemente prohibido suministrar información sobre las operaciones pasivas de los clientes (cuentas de ahorros, depósitos a plazo, saldos) a terceras personas.
+- La información de saldos y transacciones solo puede ser entregada al titular de la cuenta, a su representante legal con poder específico inscrito, o por mandato judicial explícito.
+
+2. TRATAMIENTO DE DATOS PERSONALES (PII - Personally Identifiable Information)
+Toda aplicación, chatbot, API o agente conversacional de Caja Ica debe cumplir estrictamente con la Ley N° 29733 (Ley de Protección de Datos Personales en el Perú).
+- Los siguientes datos son considerados de carácter sensible y no deben ser compartidos ni mostrados sin encriptación previa en interfaces digitales:
+  * Número de DNI o Carné de Extranjería completo.
+  * Número de teléfono celular personal.
+  * Dirección de domicilio del cliente.
+  * Claves de acceso secretas (PIN, Token digital, contraseña OTP).
+- Ningún canal digital interactivo (chatbot o agente de soporte) solicitará al cliente su clave secreta o código OTP bajo ninguna circunstancia.
+
+3. POLÍTICA DE DERIVACIÓN (HANDOFF) A ASESORES HUMANOS
+- Los canales automáticos interactivos con IA deben transferir inmediatamente la atención a un asesor humano cuando:
+  * El cliente solicite explícitamente hablar con una persona.
+  * Se realicen consultas sobre saldos exactos de cuentas que requieran validación estricta de identidad (OTP).
+  * El cliente exprese inconformidad o reclamos por transacciones no reconocidas o fraude bancario.
+  * La consulta del cliente exceda las capacidades de respuesta del chatbot después de dos intentos fallidos de coincidencia de intención.
+
+4. PROTOCOLOS ESPECIALES DE ATENCIÓN EN CANALES DIGITALES
+- Conductas Ofensivas: En caso de recibir insultos o lenguaje ofensivo por parte de un usuario, el chatbot debe responder de forma neutral y cortés invitando al respeto mutuo. Si la conducta ofensiva persiste, debe derivar la conversación de inmediato a un asesor humano.
+- Solicitudes de Eliminación de Datos (Derechos ARCO): Si un cliente solicita eliminar sus datos personales o historial del chatbot, se debe registrar su solicitud bajo el procedimiento de Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición) y derivar el caso inmediatamente al área de protección de datos.
+- Transferencias Financieras: El chatbot de Caja Ica no puede realizar transferencias de dinero entre cuentas ni ninguna otra operación transaccional monetaria directa. Estas operaciones están restringidas únicamente a la banca móvil y banca por internet oficiales con autenticación biométrica o token digital.

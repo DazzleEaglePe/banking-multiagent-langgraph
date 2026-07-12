@@ -1,0 +1,47 @@
+POLÍTICAS DE CRÉDITO DE CONSUMO - CAJA ICA
+Código de Documento: CMAC-ICA-POL-CRE-042
+Fecha de Aprobación: Enero 2026
+
+1. DEFINICIÓN DEL PRODUCTO
+El Crédito de Consumo es un préstamo personal de libre disponibilidad otorgado a personas naturales para la adquisición de bienes o servicios.
+
+2. REQUISITOS GENERALES DE ADMISIÓN
+- Edad mínima: 21 años cumplidos al momento de la solicitud.
+- Edad máxima: 70 años al momento del vencimiento de la última cuota del crédito.
+- Nacionalidad: Peruanos o extranjeros con Carné de Extranjería vigente (residencia mínima de 2 años en el país).
+- Antigüedad laboral mínima:
+  * Trabajadores Dependientes: Mínimo 12 meses continuos de labor demostrable.
+  * Trabajadores Independientes Formales (con Ficha RUC): Mínimo 12 meses de actividad comercial continua.
+  * Trabajadores Independientes Informales: Mínimo 24 meses continuos de actividad comercial formal.
+
+3. REQUISITOS DE INGRESOS MÍNIMOS
+- Para personas individuales (sin carga familiar demostrada): Ingreso neto mensual mínimo de S/ 1,200 (Mil doscientos Soles).
+- Para clientes casados o con carga familiar: Ingreso familiar neto mínimo de S/ 1,800 (Mil ochocientos Soles).
+
+4. TASAS DE INTERÉS (TEM / TEA)
+- Tasas vigentes según perfil de riesgo y tipo de convenio:
+  * TEA Mínima: 18.5% anual (Clientes con convenio institucional de descuento por planilla).
+  * TEA Máxima: 48.0% anual (Clientes independientes informales bancarizados).
+- Comisión de Desgravamen: 0.085% mensual sobre el saldo deudor del préstamo.
+
+5. POLÍTICAS DE EVALUACIÓN DE RIESGO
+- Clasificación en la Central de Riesgos (SBS/Infocorp):
+  * El solicitante debe estar calificado como "NORMAL" en el sistema financiero durante los últimos 12 meses.
+  * Clientes calificados como "CPP" (Con Problemas Potenciales) pueden ser aprobados bajo excepción del Comité de Crédito de Agencia, requiriendo un aval solidario con calificación "NORMAL".
+  * Clientes con clasificaciones de "DEFICIENTE", "DUDOSO" o "PÉRDIDA" quedan automáticamente rechazados sin opción de apelación inmediata.
+- Relación Cuota-Ingreso (RCI): La cuota mensual del préstamo solicitado no debe exceder el 35% del ingreso neto del solicitante.
+
+6. SUSTENTO DE INGRESOS Y DOCUMENTACIÓN
+- Trabajadores Dependientes (Quinta Categoría): Debe presentar las 3 últimas boletas de pago si tiene ingreso fijo, o las 6 últimas si tiene ingresos variables, además de la constancia de trabajo.
+
+7. PLAZOS Y MONTOS MÁXIMOS
+- Plazo máximo de financiamiento: El plazo máximo de financiamiento es de 48 meses para créditos individuales normales y hasta 60 meses bajo convenio de descuento por planilla.
+- Firma conyugal: El monto máximo de financiamiento individual sin requerir firma conyugal es de S/ 10,000. Para montos superiores, es requisito obligatorio la firma de ambos cónyuges.
+
+8. GARANTÍAS Y EVALUACIÓN EXCEPCIONAL
+- Garantía líquida: Una garantía líquida es un depósito a plazo fijo en la institución que respalda el crédito, lo que permite aplicar la TEA mínima especial de 18.5%.
+- Clientes nuevos (sin experiencia crediticia): Pueden ser evaluados si cuentan con ingresos mínimos de S/ 1,500 netos, continuidad de 12 meses y un aval solidario con calificación NORMAL en el sistema financiero.
+
+9. REFINANCIACIÓN Y DEUDAS COACTIVAS
+- Refinanciación: La refinanciación de un crédito por problemas de pago conlleva una reprogramación con una TEA ajustada al nuevo perfil de riesgo del cliente, la cual suele ser mayor.
+- Deudas Coactivas: Las deudas coactivas pendientes con SUNAT o en cobranza judicial inhabilitan al solicitante para precalificar a un crédito de consumo en Caja Ica.

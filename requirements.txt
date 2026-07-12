@@ -1,0 +1,20 @@
+# LangGraph and Agents
+langgraph>=0.1.0
+
+# LangChain and Google Gemini integrations
+langchain-core<0.3.0
+langchain-google-genai==1.0.6
+google-generativeai==0.5.4
+
+# LlamaIndex and Vector Stores
+llama-index
+llama-index-llms-gemini
+llama-index-embeddings-gemini
+llama-index-vector-stores-chroma
+chromadb
+
+# Utility libraries
+python-dotenv
+pandas
+tabulate
+pydantic<2.0.0
