@@ -38,7 +38,11 @@ A partir de la interacción real con el canal oficial de WhatsApp de Caja Ica, s
    * **Problema:** Al solicitar bloquear la tarjeta por pérdida (*"Quiero bloquear mi tarjeta de débito por pérdida"*), o al reclamar airadamente (*"Tu sistema no funciona para nada, exijo hablar con un humano..."*), Boty continuó atrapado en el bucle de error: *"Ups 🥺, no he entendido..."*
    * **Impacto:** Incumple las directrices de atención rápida para fraudes. El usuario se frustra al no poder salir del menú automatizado. Nuestro **Router Agent** identifica intenciones de escalación por enojo o emergencias de inmediato y deriva el caso al nodo de **Handoff** con la información de contacto oficial nacional.
 
-5. **Interfaz de Menús Rígidos de WhatsApp (Radio Buttons):**
+5. **Bucle de Estado Infinito (State Trapping / Bucle de Callejón Sin Salida):**
+   * **Problema:** Al ingresar al flujo de validación de identidad (`1. Mis Cuentas de Ahorros`), el chatbot exige ingresar un DNI. Si el usuario intenta salir escribiendo `"hola!"`, `"Reclamos y Quejas"` o cualquier otro mensaje para cancelar, el bot ignora la intención y se queda ciclado infinitamente exigiendo: *"Perfecto, ahora por favor ingresa tu número de documento."*
+   * **Impacto:** El usuario queda "secuestrado" dentro del sub-flujo y no puede regresar al menú principal ni realizar otra consulta, a menos que espere los 5 minutos de inactividad para que la sesión expire. En una arquitectura con **LangGraph**, el **Router** evalúa globalmente cada entrada en cada turno, permitiendo romper el contexto local si el usuario expresa una intención de cancelación o cambio de tema.
+
+6. **Interfaz de Menús Rígidos de WhatsApp (Radio Buttons):**
    * **Problema:** El bot actual despliega una lista cerrada de 10 opciones fijas mediante el botón de `MENU`.
    * **Impacto:** Impide que el usuario haga preguntas combinadas o complejas de lenguaje natural. Nuestro enfoque conversacional asíncrono con **LangGraph** permite mantener el contexto dinámico independientemente del orden de los inputs.
 
