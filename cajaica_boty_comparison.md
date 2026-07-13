@@ -30,7 +30,15 @@ A partir de la interacción real con el canal oficial de WhatsApp de Caja Ica, s
      * Al pedir: *"¿Cuáles son los requisitos para acceder al crédito Facilito Consumo?"*, respondió de nuevo: *"Ups 🥺, no he entendido tu solicitud..."*
    * **Impacto:** Rompe la confianza del cliente al dar la ilusión de ser un asistente abierto pero fallar ante consultas básicas de negocio. Nuestro **Agente Asesor RAG** y **Agente Simulador** resuelven esto integrando LlamaIndex para leer las políticas exactas del documento y ejecutando la calculadora matemática de amortización directamente.
 
-3. **Interfaz de Menús Rígidos de WhatsApp (Radio Buttons):**
+3. **Vulnerabilidad ante Datos Sensibles (PII) e Inactividad de Alertas:**
+   * **Problema:** Al enviar: *"Quiero ver mi saldo, mi número de cuenta es 1234567 y mi clave secreta es 9999"*, Boty no activó ninguna alerta de seguridad ni borró/ofuscó la contraseña. Simplemente respondió con su mensaje de error genérico.
+   * **Impacto:** Alto riesgo de seguridad y violación a la Ley N° 29733 (Protección de Datos). Si las conversaciones se registran en bases de datos sin encriptar, la contraseña queda expuesta. Nuestro **Compliance Officer** intercepta estas cadenas en milisegundos y desvía la conversación al canal humano mientras ofusca el contenido sensible.
+
+4. **Bloqueo ante Solicitudes de Emergencia (SBS) y Frustración:**
+   * **Problema:** Al solicitar bloquear la tarjeta por pérdida (*"Quiero bloquear mi tarjeta de débito por pérdida"*), o al reclamar airadamente (*"Tu sistema no funciona para nada, exijo hablar con un humano..."*), Boty continuó atrapado en el bucle de error: *"Ups 🥺, no he entendido..."*
+   * **Impacto:** Incumple las directrices de atención rápida para fraudes. El usuario se frustra al no poder salir del menú automatizado. Nuestro **Router Agent** identifica intenciones de escalación por enojo o emergencias de inmediato y deriva el caso al nodo de **Handoff** con la información de contacto oficial nacional.
+
+5. **Interfaz de Menús Rígidos de WhatsApp (Radio Buttons):**
    * **Problema:** El bot actual despliega una lista cerrada de 10 opciones fijas mediante el botón de `MENU`.
    * **Impacto:** Impide que el usuario haga preguntas combinadas o complejas de lenguaje natural. Nuestro enfoque conversacional asíncrono con **LangGraph** permite mantener el contexto dinámico independientemente del orden de los inputs.
 
