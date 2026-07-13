@@ -128,7 +128,7 @@ python3 test_cases.py
 
 ---
 
-## 👁️ Monitoreo y Observabilidad (LangSmith)
+## Monitoreo y Observabilidad (LangSmith)
 
 El proyecto integra de forma nativa telemetría asíncrona mediante OpenTelemetry para trazar la ejecución de la red de agentes en **LangSmith**. Esto permite visualizar la secuencia del grafo, analizar el consumo de tokens y depurar las respuestas del LLM en producción.
 
