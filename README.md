@@ -84,12 +84,14 @@ La herramienta de simulación (`tools.py`) aplica las fórmulas oficiales del si
 banking-multiagent-langgraph/
 ├── data/                             # Políticas y documentos fuente del banco
 ├── requirements.txt                  # Dependencias del proyecto con versiones fijas
+├── .env.example                      # Plantilla de variables de entorno (Gemini + LangSmith)
 ├── config.py                         # Conexión al SDK de Gemini y parches de red (REST)
 ├── state.py                          # Esquema de estado conversacional del grafo
 ├── tools.py                          # Herramientas de cálculo financiero e indexador ChromaDB
 ├── graph_builder.py                  # Ensamblador del StateGraph de LangGraph con memoria
 ├── main.py                           # Cliente conversacional interactivo por consola
 ├── test_cases.py                     # Suite automática con los 4 casos límite de prueba
+├── test_single_trace.py              # Script de prueba unitaria para telemetría LangSmith
 └── README.md                         # Documentación del proyecto
 ```
 
@@ -123,3 +125,27 @@ Corre las validaciones programáticas preconfiguradas para verificar de extremo 
 python3 test_cases.py
 ```
 *(Nota: El sistema maneja de forma autónoma los rate-limits y reintentos automáticos para operar bajo las cuotas gratuitas de Google AI Studio).*
+
+---
+
+## 👁️ Monitoreo y Observabilidad (LangSmith)
+
+El proyecto integra de forma nativa telemetría asíncrona mediante OpenTelemetry para trazar la ejecución de la red de agentes en **LangSmith**. Esto permite visualizar la secuencia del grafo, analizar el consumo de tokens y depurar las respuestas del LLM en producción.
+
+### Configuración del Tracing
+1. Genera una API Key gratuita en [smith.langchain.com](https://smith.langchain.com).
+2. Añade las siguientes variables a tu archivo `.env`:
+   ```env
+   LANGCHAIN_TRACING_V2=true
+   LANGCHAIN_ENDPOINT="https://api.smith.langchain.com"
+   LANGCHAIN_API_KEY=tu_api_key_de_langsmith
+   LANGCHAIN_PROJECT="banking-multiagent-langgraph"
+   ```
+
+### Ejecutar Verificación de Trazas
+Para enviar una traza de prueba aislada y verificar la correcta recepción de datos en tu panel de LangSmith, ejecuta:
+```bash
+python3 test_single_trace.py
+```
+Una vez ejecutado, podrás ver el diagrama de flujo interactivo del grafo de agentes (Router ➡️ Advisor ➡️ Compliance) directamente en la interfaz web de LangSmith.
+
