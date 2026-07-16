@@ -82,6 +82,9 @@ La herramienta de simulación (`tools.py`) aplica las fórmulas oficiales del si
 
 ```
 banking-multiagent-langgraph/
+├── .github/
+│   └── workflows/
+│       └── mlops-ci.yml              # Pipeline de integración continua de GitHub Actions
 ├── data/                             # Políticas y documentos fuente del banco
 ├── requirements.txt                  # Dependencias del proyecto con versiones fijas
 ├── .env.example                      # Plantilla de variables de entorno (Gemini + LangSmith)
@@ -89,9 +92,13 @@ banking-multiagent-langgraph/
 ├── state.py                          # Esquema de estado conversacional del grafo
 ├── tools.py                          # Herramientas de cálculo financiero e indexador ChromaDB
 ├── graph_builder.py                  # Ensamblador del StateGraph de LangGraph con memoria
+├── app.py                            # Servidor API REST con FastAPI
 ├── main.py                           # Cliente conversacional interactivo por consola
 ├── test_cases.py                     # Suite automática con los 4 casos límite de prueba
+├── test_api.py                       # Test de integración de la API para CI/CD
 ├── test_single_trace.py              # Script de prueba unitaria para telemetría LangSmith
+├── Dockerfile                        # Archivo de construcción de imagen Docker de producción
+├── .dockerignore                     # Exclusiones de construcción de Docker
 └── README.md                         # Documentación del proyecto
 ```
 
@@ -148,4 +155,39 @@ Para enviar una traza de prueba aislada y verificar la correcta recepción de da
 python3 test_single_trace.py
 ```
 Una vez ejecutado, podrás ver el diagrama de flujo interactivo del grafo de agentes (Router ➡️ Advisor ➡️ Compliance) directamente en la interfaz web de LangSmith.
+
+---
+
+## MLOps y Despliegue en Produccion
+
+El proyecto sigue practicas de MLOps para la automatizacion de entornos, pruebas de regresion y serving de modelos.
+
+### 1. Servir como API REST (FastAPI)
+Levanta la API en modo de desarrollo local:
+```bash
+python3 app.py
+```
+El servidor estara activo en `http://localhost:8000`. Puedes probar el endpoint de salud ejecutando un GET a `/health` o interactuar con el chat mediante `/docs`.
+
+### 2. Contenerizacion con Docker
+Para construir y ejecutar el contenedor de forma aislada, garantizando la portabilidad del sistema y su base vectorial:
+
+Construir la imagen de Docker:
+```bash
+docker build -t financial-agent:latest .
+```
+
+Ejecutar el contenedor:
+```bash
+docker run -d -p 8000:8000 --env-file .env financial-agent:latest
+```
+
+### 3. Pipeline de Integracion Continua (CI/CD)
+El proyecto incluye un workflow de GitHub Actions en `.github/workflows/mlops-ci.yml`.
+En cada push o pull request dirigido a la rama `main`, el pipeline de forma automatica:
+1. Levanta un contenedor de pruebas en Ubuntu.
+2. Configura Python 3.9 e instala todas las dependencias del proyecto.
+3. Ejecuta chequeos de sintaxis y compilacion de archivos.
+4. Corre una prueba de integracion del grafo y FastAPI (`test_api.py`) utilizando una clave de prueba aislada, certificando que los cambios en el codigo no alteren la correcta ejecucion del orquestador.
+
 

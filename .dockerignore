@@ -1,0 +1,26 @@
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Environment configurations and secret keys
+.env
+.env.*
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+
+# Databases and Local Vector DB state
+.chromadb/
+
+# OS specific files
+.DS_Store
+
+# Git
+.git
+.github
+.gitignore
